@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book an Appointment — Willow Grove Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" width="34" height="20"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Willow Grove Clinic
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="doctors.html">Find a Doctor</a></li>
+      <li><a href="booking.html" aria-current="page">Book Appointment</a></li>
+      <li><a href="confirmation.html" class="nav-cta">My Appointments</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="section-head-block">
+  <p class="eyebrow">Book an appointment</p>
+  <h1>Reserve your visit</h1>
+  <p>Choose a doctor, pick an available date and time, and fill in your details to confirm.</p>
+</section>
+
+<section class="section">
+  <form class="booking-form" id="bookingForm" novalidate>
+    <div class="form-row">
+      <label for="doctorSelect">Select doctor</label>
+      <select id="doctorSelect" name="doctorSelect" required>
+        <option value="" disabled selected>Choose a doctor</option>
+      </select>
+      <span class="form-error" id="err-doctorSelect"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="appointmentDate">Select date</label>
+      <input type="date" id="appointmentDate" name="appointmentDate" required>
+      <span class="form-error" id="err-appointmentDate"></span>
+    </div>
+
+    <div class="form-row form-row-full">
+      <label for="timeSlot">Select time slot</label>
+      <div class="slot-grid" id="slotGrid">
+        <p class="slot-hint">Choose a doctor to see available time slots.</p>
+      </div>
+      <span class="form-error" id="err-timeSlot"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="patientName">Patient name</label>
+      <input type="text" id="patientName" name="patientName" placeholder="Jane Doe" required>
+      <span class="form-error" id="err-patientName"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="patientEmail">Email</label>
+      <input type="email" id="patientEmail" name="patientEmail" placeholder="jane@email.com" required>
+      <span class="form-error" id="err-patientEmail"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="patientPhone">Phone</label>
+      <input type="tel" id="patientPhone" name="patientPhone" placeholder="+91 98765 43210" required>
+      <span class="form-error" id="err-patientPhone"></span>
+    </div>
+
+    <div class="form-row">
+      <label for="patientAge">Age</label>
+      <input type="number" id="patientAge" name="patientAge" min="0" max="120" placeholder="32" required>
+      <span class="form-error" id="err-patientAge"></span>
+    </div>
+
+    <div class="form-row form-row-full">
+      <label for="notes">Notes for the doctor (optional)</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Briefly describe your reason for visiting"></textarea>
+    </div>
+
+    <!-- Dynamic appointment summary, updates live as fields are filled -->
+    <div class="booking-summary" id="bookingSummary">
+      <h3>Appointment summary</h3>
+      <dl>
+        <dt>Doctor</dt><dd id="sumDoctor">—</dd>
+        <dt>Department</dt><dd id="sumDepartment">—</dd>
+        <dt>Date</dt><dd id="sumDate">—</dd>
+        <dt>Time</dt><dd id="sumTime">—</dd>
+        <dt>Consultation fee</dt><dd id="sumFee">—</dd>
+      </dl>
+    </div>
+
+    <button type="submit" class="btn btn-primary form-submit">Confirm booking</button>
+  </form>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 24" width="30" height="18"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Willow Grove Clinic
+      </a>
+      <p class="footer-tagline">Care that knows your name.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="doctors.html">Find a Doctor</a>
+      <a href="booking.html">Book Appointment</a>
+      <a href="confirmation.html">My Appointments</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 Willow Grove Clinic. Built for the iNeuBytes Web Development Internship — Task 2.</p>
+</footer>
+
+<script src="doctors-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Profile — Willow Grove Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" width="34" height="20"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Willow Grove Clinic
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="doctors.html">Find a Doctor</a></li>
+      <li><a href="booking.html">Book Appointment</a></li>
+      <li><a href="confirmation.html" class="nav-cta">My Appointments</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="section" id="profileSection">
+  <a href="doctors.html" class="back-link">&larr; Back to all doctors</a>
+
+  <div class="profile-card" id="profileCard">
+    <!-- populated by script.js -->
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 24" width="30" height="18"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Willow Grove Clinic
+      </a>
+      <p class="footer-tagline">Care that knows your name.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="doctors.html">Find a Doctor</a>
+      <a href="booking.html">Book Appointment</a>
+      <a href="confirmation.html">My Appointments</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 Willow Grove Clinic. Built for the iNeuBytes Web Development Internship — Task 2.</p>
+</footer>
+
+<script src="doctors-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
