@@ -31,7 +31,18 @@ A responsive clinic landing page built with semantic HTML, custom CSS, and vanil
 **Files:** `Task 1/index.html`, `Task 1/style.css`, `Task 1/script.js`
 
 ## Task 2 – Doctor Appointment Booking System
-*Coming soon*
+
+A multi-page doctor appointment booking system with search, filtering, real-time slot booking, and appointment history — built with semantic HTML, custom CSS, and vanilla JavaScript, using localStorage for data persistence.
+
+**Features:**
+- Home page with department browsing
+- Doctor listing with search-by-name and department filter
+- Individual doctor profile pages (experience, fee, available time slots)
+- Appointment booking form with live-updating summary and full validation
+- Confirmation page with booking banner and persistent appointment history (localStorage)
+- Fully responsive across mobile, tablet, and desktop
+
+**Files:** `Task 2/index.html`, `Task 2/doctors.html`, `Task 2/doctor-details.html`, `Task 2/booking.html`, `Task 2/confirmation.html`, `Task 2/style.css`, `Task 2/script.js`, `Task 2/doctors-data.js`
 
 ## Task 3 – Healthcare Management Dashboard
 *Coming soon*
