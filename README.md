@@ -44,7 +44,19 @@ A multi-page doctor appointment booking system with search, filtering, real-time
 **Files:** `Task 2/index.html`, `Task 2/doctors.html`, `Task 2/doctor-details.html`, `Task 2/booking.html`, `Task 2/confirmation.html`, `Task 2/style.css`, `Task 2/script.js`, `Task 2/doctors-data.js`
 
 ## Task 3 – Healthcare Management Dashboard
-*Coming soon*
+
+A full admin dashboard for managing clinic operations — doctors, patients, appointments, and departments — with a persistent sidebar/top-nav shell, live statistics, and complete CRUD functionality backed by localStorage.
+
+**Features:**
+- Dashboard home with live stat cards (Total Doctors, Patients, Appointments, Departments) and department breakdown
+- Doctor Management — add, edit, delete, search
+- Patient Management — add, edit, delete, search
+- Appointment Management — search, filter by status, inline status updates
+- Department Management — add, edit, delete
+- Auto-seeded demo data on first load
+- Fully responsive with a collapsible mobile sidebar
+
+**Files:** `Task 3/index.html`, `Task 3/doctors.html`, `Task 3/patients.html`, `Task 3/appointments.html`, `Task 3/departments.html`, `Task 3/dashboard-style.css`, `Task 3/dashboard-script.js`, `Task 3/dashboard-data.js`
 
 ## Major Project – Healthcare / Clinic Management System
 *Coming soon*
