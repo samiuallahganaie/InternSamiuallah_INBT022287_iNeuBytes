@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment Management — Willow Grove Clinic Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body>
+
+<div class="dashboard-shell">
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+    <div class="sidebar-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" width="28" height="16"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Willow Grove Admin
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Dashboard Home</a></li>
+      <li><a href="doctors.html">Doctor Management</a></li>
+      <li><a href="patients.html">Patient Management</a></li>
+      <li><a href="appointments.html">Appointment Management</a></li>
+      <li><a href="departments.html">Department Management</a></li>
+    </ul>
+  </aside>
+
+  <div class="dashboard-main">
+    <header class="topnav">
+      <div class="topnav-title">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <h1 style="font-size:1.1rem; margin:0;">Appointment Management</h1>
+      </div>
+      <div class="topnav-profile">
+        <div class="profile-meta">
+          <span class="profile-name">Shruti Kumari</span>
+          <span class="profile-role">Admin · HR</span>
+        </div>
+        <div class="profile-avatar">SK</div>
+      </div>
+    </header>
+
+    <main class="dashboard-content">
+      <div class="page-header">
+        <div>
+          <h1>Appointments</h1>
+          <p>Search, filter by status, and update appointment status.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="toolbar">
+          <input type="text" id="appointmentSearchInput" placeholder="Search by patient or doctor…">
+          <select id="appointmentStatusFilter">
+            <option value="">All statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Patient</th><th>Doctor</th><th>Department</th><th>Date / Time</th><th>Status</th><th>Update status</th></tr></thead>
+            <tbody id="appointmentsTableBody"><!-- populated by JS --></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="dashboard-data.js"></script>
+<script src="dashboard-script.js"></script>
+</body>
+</html>
