@@ -59,7 +59,22 @@ A full admin dashboard for managing clinic operations — doctors, patients, app
 **Files:** `Task 3/index.html`, `Task 3/doctors.html`, `Task 3/patients.html`, `Task 3/appointments.html`, `Task 3/departments.html`, `Task 3/dashboard-style.css`, `Task 3/dashboard-script.js`, `Task 3/dashboard-data.js`
 
 ## Major Project – Healthcare / Clinic Management System
-*Coming soon*
+
+A full-stack clinic management system with role-based authentication for Patients, Doctors, and Admins — built with Node.js, Express, and a real SQLite database (via Node's built-in `node:sqlite` module, requiring no external database server or compilation).
+
+**Features:**
+- Secure registration & login with role-based access control (Patient / Doctor / Admin)
+- Standalone public pages: Home, Departments, Appointments info, Contact
+- **Patient dashboard:** book appointments, reschedule, view history, medical records, notifications, profile management with picture upload, change password
+- **Doctor dashboard:** manage appointments and status, view "My Patients," add medical record notes, notifications, profile management
+- **Admin dashboard:** full CRUD for doctors, patients, and departments; appointment oversight; live statistics with a status breakdown chart; global search; CSV export and print/PDF reports
+- Email notifications (demo, logged server-side)
+- Relational database with proper foreign keys (users, departments, doctor/patient profiles, appointments, notifications, medical records)
+- Password hashing, session-based authentication, server-side validation
+
+**Setup:** see `Major Project/SETUP.md` for installation and demo account details.
+
+**Files:** `Major Project/server.js`, `Major Project/config/db.js`, `Major Project/routes/`, `Major Project/middleware/`, `Major Project/public/`
 
 ---
 
