@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointments — Willow Grove Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.site-footer { background: var(--teal-900); color: var(--sage-200); padding: 2.5rem 1.5rem 1.5rem; margin-top: 2rem; }
+.footer-bottom { max-width: var(--container); margin: 0 auto; padding-top: 1rem; font-size: 0.76rem; color: var(--sage-500); }
+.doctor-preview { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.doctor-preview .role-card { text-align: left; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" width="30" height="18"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Willow Grove Clinic
+    </a>
+    <ul class="nav-links">
+      <li><a href="/departments.html">Departments</a></li>
+      <li><a href="/appointment-info.html">Appointments</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/login.html">Login</a></li>
+      <li><a href="/register.html" class="btn btn-primary" style="padding:0.5em 1.2em;">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <p class="eyebrow">Appointments</p>
+  <h1>Book a visit with any of our specialists</h1>
+  <p class="hero-sub">Sign in to your patient account to search doctors, pick a time, and book — or register in under a minute if you're new here.</p>
+  <div class="hero-actions">
+    <a href="/register.html" class="btn btn-primary">Create a patient account</a>
+    <a href="/login.html" class="btn btn-ghost">Sign in to book</a>
+  </div>
+</section>
+
+<div class="doctor-preview" id="doctorPreview">
+  <p class="slot-hint" style="grid-column:1/-1;text-align:center;">Loading doctors…</p>
+</div>
+
+<footer class="site-footer">
+  <p class="footer-bottom">© 2026 Willow Grove Clinic. Built for the iNeuBytes Web Development Internship — Major Project.</p>
+</footer>
+
+<script>
+async function loadDoctorPreview() {
+  try {
+    const res = await fetch('/api/doctors');
+    const data = await res.json();
+    document.getElementById('doctorPreview').innerHTML = data.doctors.map(d => `
+      <article class="role-card">
+        <h3>${d.name}</h3>
+        <p>${d.department} · ${d.experience} yrs experience · ₹${d.fee} consultation</p>
+      </article>
+    `).join('') || '<p class="slot-hint" style="grid-column:1/-1;text-align:center;">No doctors listed yet.</p>';
+  } catch (err) {
+    document.getElementById('doctorPreview').innerHTML = '';
+  }
+}
+loadDoctorPreview();
+</script>
+</body>
+</html>

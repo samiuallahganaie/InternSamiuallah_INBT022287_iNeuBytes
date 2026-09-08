@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Willow Grove Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.site-footer { background: var(--teal-900); color: var(--sage-200); padding: 2.5rem 1.5rem 1.5rem; margin-top: 2rem; }
+.footer-bottom { max-width: var(--container); margin: 0 auto; padding-top: 1rem; font-size: 0.76rem; color: var(--sage-500); }
+.contact-wrap { max-width: 700px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+.contact-list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: 0.6rem; }
+.contact-form { background: var(--white); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; gap: 1rem; }
+.contact-form label { font-size: 0.85rem; font-weight: 600; color: var(--teal-900); }
+.contact-form input, .contact-form textarea {
+  font-family: var(--font-body); font-size: 0.95rem; padding: 0.7em 0.9em;
+  border: 1.5px solid var(--sage-200); border-radius: 8px; background: var(--bg); color: var(--ink);
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" width="30" height="18"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Willow Grove Clinic
+    </a>
+    <ul class="nav-links">
+      <li><a href="/departments.html">Departments</a></li>
+      <li><a href="/appointment-info.html">Appointments</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/login.html">Login</a></li>
+      <li><a href="/register.html" class="btn btn-primary" style="padding:0.5em 1.2em;">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" style="padding-bottom:1rem;">
+  <p class="eyebrow">Get in touch</p>
+  <h1>Contact Willow Grove Clinic</h1>
+</section>
+
+<div class="contact-wrap">
+  <ul class="contact-list">
+    <li><strong>Address:</strong> 214 Larkspur Avenue, Willow Grove</li>
+    <li><strong>Phone:</strong> +91 98765 12345</li>
+    <li><strong>Email:</strong> care@willowgroveclinic.example</li>
+    <li><strong>Hours:</strong> Mon–Sat, 8am – 7pm</li>
+  </ul>
+
+  <div class="form-banner" id="contactBanner"></div>
+  <form class="contact-form" id="contactForm">
+    <div>
+      <label for="name">Your name</label>
+      <input type="text" id="name" required>
+    </div>
+    <div>
+      <label for="email">Your email</label>
+      <input type="email" id="email" required>
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send message</button>
+  </form>
+</div>
+
+<footer class="site-footer">
+  <p class="footer-bottom">© 2026 Willow Grove Clinic. Built for the iNeuBytes Web Development Internship — Major Project.</p>
+</footer>
+
+<script>
+// Demo-only contact form — no backend endpoint wired up; this simply
+// confirms receipt to the user, consistent with the "demo" scope of this project.
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const banner = document.getElementById('contactBanner');
+  banner.textContent = 'Thanks! Your message has been noted (demo only — no email is actually sent).';
+  banner.className = 'form-banner show success';
+  this.reset();
+});
+</script>
+</body>
+</html>

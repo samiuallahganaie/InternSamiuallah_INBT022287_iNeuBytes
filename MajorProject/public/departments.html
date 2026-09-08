@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departments — Willow Grove Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" width="30" height="18"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Willow Grove Clinic
+    </a>
+    <ul class="nav-links">
+      <li><a href="/departments.html">Departments</a></li>
+      <li><a href="/appointment-info.html">Appointments</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/login.html">Login</a></li>
+      <li><a href="/register.html" class="btn btn-primary" style="padding:0.5em 1.2em;">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" style="padding-bottom: 1rem;">
+  <p class="eyebrow">Our departments</p>
+  <h1>Browse our specialties</h1>
+  <p class="hero-sub">Every department is staffed by dedicated specialists ready to help.</p>
+</section>
+
+<div class="role-grid" id="departmentGrid" style="grid-template-columns: repeat(3, 1fr);">
+  <p class="slot-hint" style="grid-column: 1/-1; text-align:center;">Loading departments…</p>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a href="/" class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 24" width="30" height="18"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Willow Grove Clinic
+      </a>
+      <p class="footer-tagline">Care that knows your name.</p>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 Willow Grove Clinic. Built for the iNeuBytes Web Development Internship — Major Project.</p>
+</footer>
+
+<script>
+async function loadPublicDepartments() {
+  try {
+    const res = await fetch('/api/departments');
+    const data = await res.json();
+    document.getElementById('departmentGrid').innerHTML = data.departments.map(d => `
+      <article class="role-card">
+        <h3>${d.name}</h3>
+        <p>${d.description || ''}</p>
+      </article>
+    `).join('') || '<p class="slot-hint" style="grid-column:1/-1;text-align:center;">No departments listed yet.</p>';
+  } catch (err) {
+    document.getElementById('departmentGrid').innerHTML = '<p class="slot-hint" style="grid-column:1/-1;text-align:center;">Could not load departments.</p>';
+  }
+}
+loadPublicDepartments();
+</script>
+<style>
+.site-footer { background: var(--teal-900); color: var(--sage-200); padding: 2.5rem 1.5rem 1.5rem; margin-top: 2rem; }
+.footer-grid { max-width: var(--container); margin: 0 auto; }
+.brand-footer { color: var(--white); }
+.footer-tagline { color: var(--sage-500); margin-top: 0.5rem; }
+.footer-bottom { max-width: var(--container); margin: 2rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.76rem; color: var(--sage-500); }
+.role-grid { padding: 0 1.5rem 4rem; }
+</style>
+</body>
+</html>

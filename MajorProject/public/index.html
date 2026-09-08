@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willow Grove Clinic — Management System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 24" width="30" height="18"><polyline points="0,12 10,12 14,3 19,21 23,12 40,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Willow Grove Clinic
+    </a>
+    <ul class="nav-links">
+      <li><a href="/departments.html">Departments</a></li>
+      <li><a href="/appointment-info.html">Appointments</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/login.html">Login</a></li>
+      <li><a href="/register.html" class="btn btn-primary" style="padding:0.5em 1.2em;">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <p class="eyebrow">Clinic Management System</p>
+  <h1>One system for patients, doctors, and admins.</h1>
+  <p class="hero-sub">Book appointments, manage schedules, and run the clinic — all from role-based dashboards built for exactly what each person needs to do.</p>
+  <div class="hero-actions">
+    <a href="/register.html" class="btn btn-primary">Create an account</a>
+    <a href="/login.html" class="btn btn-ghost">Sign in</a>
+  </div>
+</section>
+
+<div class="role-grid">
+  <article class="role-card">
+    <h3>For Patients</h3>
+    <p>Book appointments, track your history, and manage your profile in one place.</p>
+  </article>
+  <article class="role-card">
+    <h3>For Doctors</h3>
+    <p>View your schedule, manage appointments, and update consultation status.</p>
+  </article>
+  <article class="role-card">
+    <h3>For Admins</h3>
+    <p>Oversee doctors, patients, departments, and clinic-wide statistics.</p>
+  </article>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

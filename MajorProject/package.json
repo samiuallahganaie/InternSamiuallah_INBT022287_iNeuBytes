@@ -1,0 +1,16 @@
+{
+  "name": "willow-grove-clinic-management-system",
+  "version": "1.0.0",
+  "description": "Healthcare / Clinic Management System — iNeuBytes Web Development Internship Major Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-sqlite server.js",
+    "dev": "node --experimental-sqlite server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5"
+  }
+}
