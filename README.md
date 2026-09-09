@@ -77,6 +77,3 @@ A full-stack clinic management system with role-based authentication for Patient
 **Files:** `Major Project/server.js`, `Major Project/config/db.js`, `Major Project/routes/`, `Major Project/middleware/`, `Major Project/public/`
 
 ---
-
-### Submission links
-Google Doc report and demo videos are submitted via the iNeuBytes portal as per program guidelines.
